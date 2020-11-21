@@ -1,49 +1,46 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html>
 <head>
     <title> Jain University </title>
-    <link href="{% static 'style.css' %}" rel="stylesheet">
-    <link rel="icon"type="image/png"href="{% static 'img/favicon.png' %}">
+    <link href="{%static 'style.css' %}" rel="stylesheet">
+    <link rel="icon"type="image/png" href="{%static 'img/favicon.png' %}">
  </head>
- <img src="{%static 'img/falcon.png' %}" style="width: 500px; height: 70px; display: block; margin-left: auto; margin-right: auto; margin-top:45px;">  
-
- <div class="container" id="container">
+ <img src="{%static 'img/falcon.png' %}" style="width: 500px; height: 70px; display: block; margin-left: auto; margin-right: auto;">  
+<div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form method="POST" >
+		<form method="POST">
 			<h1>TEACHER LOGIN</h1>
 			{% csrf_token %}
 			<input type="text" placeholder="ID.NO." />
             <input type="password" placeholder="Password" />
-			<button>Sign In </button>
+
+			<button>Sign IN </button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form method="POST">
-            <h1>STUDENT LOGIN </h1>
-            {% csrf_token %}
-			<input type="text" placeholder="usn" />
-			<input type="password" placeholder="password" />
+		<form method="POST" >
+			<h1>STUDENT LOGIN </h1>
+			{% csrf_token %}
+			<input type="text" placeholder="USN" />
+			<input type="password" placeholder="Password" />
 			<button type="submit">Sign In</button>
 		</form>
-    </div>
-    
+	</div>
 	<div class="overlay-container">
 		<div class="overlay">
 			<div class="overlay-panel overlay-left">
 				<h1>Welcome Student!</h1>
 				<p>To keep connected with us please login with your personal info</p>
-				<button class="ghost" >Sign In</button>
+				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>Welcome Faculty!</h1>
 				<p> To keep connected with us please login with your personal info </p>
-				<button class="ghost" >Sign In</button>
+				<button class="ghost" id="signUp">Sign In</button>
 			</div>
 		</div>
 	</div>
 </div>
 </html>
-
 <script src="{%static 'pro.js' %}"></script>
