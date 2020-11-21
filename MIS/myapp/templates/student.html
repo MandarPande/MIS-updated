@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Jain University </title>
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'student.css' %}" rel="stylesheet">
+    <link rel="icon"type="image/png"href="img/favicon.png">
+ </head>
+  <script>
+    var open = document.getElementById('hamburger');
+	var changeIcon = true;
+
+open.addEventListener("click", function(){
+
+    var overlay1 = document.querySelector('.overlay1');
+    var nav = document.querySelector('nav');
+    var icon = document.querySelector('.menu-toggle i');
+
+    overlay.classList.toggle("menu-open");
+    nav.classList.toggle("menu-open");
+
+    if (changeIcon) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+
+        changeIcon = false;
+    }
+    else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+        changeIcon = true;
+    }
+});
+  </script>
+
+<body>
+<!--   <header> -->
+        <div class="menu-toggle" id="hamburger" >
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="overlay1" ></div>
+        <div class="container1" style="background-color: black">
+            <nav style="padding-bottom: 20px;">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Achievement</a></li>
+                    <li><a href="#">Feed back</a></li>
+                    <li><a href="#">Log out</a></li>
+                </ul>
+            </nav>
+        </div>
+<!-- </header> -->
+
+	<div class="student"  style="margin-top:70px;">
+        <div class="classic">
+       		<img src="{% static'img/details.jpg' %}">
+       		<a href="classic.html" ><b>STUDENT DETAILS</b></a>
+        </div>
+		<div class="classic">
+       		<img src="{% static 'img/acheivement.jpg' %}" style="height: 265px; width:320px;">
+       		<a href="classic.html" ><b>ACIEVEMENTS</b></a>
+        </div>
+        <div class="classic" >
+       		<img src="{% static 'img/result1.jpg' %}" style="height: 265px; width:320px;">
+       		<a href="classic.html" ><b>RESULTS</b></a>
+        </div>
+        
+	</div>
+</body>
+<footer class="main-footer" style="padding: 15px; background: #333; color: #fff;font-size: 15px; margin-top: 130px; text-align:right;" >
+  <strong>Copyright &copy; {% now "Y" %}, Jain University Students.</strong> 
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 1.0
+ </html>
