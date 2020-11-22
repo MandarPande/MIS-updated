@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.login, name="login"),
     path('home/',views.menu, name="home"),
-    path('achievements/',views.home),
+    path('achievements/',views.home, name="achievements"),
     path('student_details/',views.details),
     path("logout/", views.logout_request, name="logout")
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
